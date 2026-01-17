@@ -1,0 +1,19 @@
+# Godot 4+ ignores
+*.import
+export_presets.cfg
+export_templates.cfg
+.godot/
+
+# Godot 3.x ignores (por si acaso)
+export.cfg
+*.translation
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+*.swo

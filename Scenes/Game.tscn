@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b51j2xae84ryd"]
+
+[ext_resource type="Script" uid="uid://ctprvyn07yud3" path="res://Scripts/Configuration/Game_Manager.gd" id="1_fgofq"]
+[ext_resource type="PackedScene" uid="uid://dumwgp5gm511j" path="res://Scenes/TheGame/Game_State_Machine.tscn" id="2_j5yw3"]
+[ext_resource type="PackedScene" uid="uid://df4nsrbakp7ru" path="res://Scenes/TheGame/Componentes.tscn" id="3_kldst"]
+
+[node name="Juego" type="Node2D"]
+script = ExtResource("1_fgofq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+
+[node name="Game_States" parent="." instance=ExtResource("2_j5yw3")]
+
+[node name="Componentes" parent="." instance=ExtResource("3_kldst")]

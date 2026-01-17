@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://b5f3tvbobaptx"]
+
+[ext_resource type="Texture2D" uid="uid://cy7cximseukag" path="res://Resources/Sprites/Casilla/Iconos/Icono_Estandar_All_Activo.png" id="1_dlk0i"]
+[ext_resource type="Texture2D" uid="uid://bx3ifo66kl4dy" path="res://Resources/Sprites/Casilla/Iconos/Icono_Estandar_All_InRute.png" id="2_ilj6s"]
+[ext_resource type="Texture2D" uid="uid://duexdv1hd0mgk" path="res://Resources/Sprites/Casilla/Iconos/Icono_Estandar_All_Inactivo.png" id="3_xdjfa"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dlk0i")
+}],
+"loop": true,
+"name": &"Activo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ilj6s")
+}],
+"loop": true,
+"name": &"In_Rute",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_xdjfa")
+}],
+"loop": true,
+"name": &"Inactivo",
+"speed": 5.0
+}]

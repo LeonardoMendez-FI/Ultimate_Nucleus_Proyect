@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2syb762el1cw"]
+
+[ext_resource type="Texture2D" uid="uid://bfib61p61uxia" path="res://Resources/Sprites/Tablero/TableroGlobal.png" id="1_a8puo"]
+[ext_resource type="Script" uid="uid://bkk05efrm5yam" path="res://Scripts/tablero.gd" id="2_2pf4a"]
+[ext_resource type="PackedScene" uid="uid://bv3bvht7gsdsp" path="res://Scenes/Casilla.tscn" id="3_robsk"]
+
+[node name="Tablero" type="Sprite2D"]
+z_as_relative = false
+texture = ExtResource("1_a8puo")
+script = ExtResource("2_2pf4a")
+escena = ExtResource("3_robsk")

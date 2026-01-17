@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://c2skl3xcylikn"]
+
+[ext_resource type="Script" uid="uid://ciypr1aolh2ia" path="res://Scripts/ficha.gd" id="1_laaii"]
+[ext_resource type="Texture2D" uid="uid://d1dlf82r6dbxs" path="res://SpritesGenerales/Crono_sprites/FichaEstandar_Azul.png" id="2_20lwp"]
+[ext_resource type="Texture2D" uid="uid://ddodh6cvlwydl" path="res://SpritesGenerales/Crono_sprites/FichaSeleccionable_Azul.png" id="3_20lwp"]
+[ext_resource type="Script" uid="uid://dd3fm2fckrvy" path="res://Scripts/Clases/Animable.gd" id="4_ls2gh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eesfy"]
+radius = 21.377558
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eesfy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_20lwp")
+}],
+"loop": true,
+"name": &"Estandar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_20lwp")
+}],
+"loop": true,
+"name": &"Seleccionable",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_20lwp")
+}],
+"loop": true,
+"name": &"Seleccionada",
+"speed": 5.0
+}]
+
+[node name="Ficha" type="Area2D"]
+z_index = 3
+z_as_relative = false
+script = ExtResource("1_laaii")
+dir_sprites = "res://Resources/Sprites/Ficha"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eesfy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_eesfy")
+animation = &"Estandar"
+
+[node name="Animable" type="Node" parent="."]
+script = ExtResource("4_ls2gh")
+metadata/_custom_type_script = "uid://dd3fm2fckrvy"

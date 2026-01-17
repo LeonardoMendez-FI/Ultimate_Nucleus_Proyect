@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://45l0eq727s56"]
+
+[ext_resource type="Script" uid="uid://bwurfj3kwrql3" path="res://Scripts/casilla.gd" id="1_446co"]
+[ext_resource type="Texture2D" uid="uid://gr7rk1f5ysg0" path="res://Resources/Sprites/Casilla/Sprite/Casilla_Nucleus_Proteccion_Morado.png" id="2_r8a1l"]
+[ext_resource type="SpriteFrames" uid="uid://b5f3tvbobaptx" path="res://Resources/Iconos_Casilla.tres" id="2_vr8dv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vr8dv"]
+radius = 23.021729
+
+[node name="Casilla" type="Area2D" node_paths=PackedStringArray("sprite", "icon")]
+script = ExtResource("1_446co")
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-10, 2)
+rotation = 1.5707964
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_r8a1l")
+
+[node name="Icono" type="AnimatedSprite2D" parent="."]
+position = Vector2(-11, 2)
+rotation = 1.5707964
+scale = Vector2(0.33, 0.33)
+sprite_frames = ExtResource("2_vr8dv")
+animation = &"Inactivo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
+shape = SubResource("CircleShape2D_vr8dv")

@@ -1,0 +1,38 @@
+[gd_scene load_steps=10 format=3 uid="uid://dumwgp5gm511j"]
+
+[ext_resource type="PackedScene" uid="uid://b223tlyf8bvhg" path="res://Scenes/StateMachine.tscn" id="1_5bvws"]
+[ext_resource type="Script" uid="uid://bilg6qjxgl464" path="res://Scripts/Clases/State_Machine/state_iniciar_turno.gd" id="2_s84o2"]
+[ext_resource type="Script" uid="uid://c7pbf8j8rkq52" path="res://Scripts/Clases/State_Machine/state_inicio.gd" id="3_2wmqu"]
+[ext_resource type="Script" uid="uid://cs6y544sft0vk" path="res://Scripts/Clases/State_Machine/state_sacar_tirar.gd" id="4_0kop3"]
+[ext_resource type="Script" uid="uid://hktn7kvvk1ut" path="res://Scripts/Clases/State_Machine/state_dados_tirados.gd" id="5_icgd4"]
+[ext_resource type="Script" uid="uid://cu2x70rhmotpd" path="res://Scripts/Clases/State_Machine/state_dado_seleccionado.gd" id="6_v8m6i"]
+[ext_resource type="Script" uid="uid://654wy30hmp5q" path="res://Scripts/Clases/State_Machine/state_ficha_seleccionada.gd" id="7_pr4nq"]
+[ext_resource type="Script" uid="uid://be7bj87urv2g7" path="res://Scripts/Clases/State_Machine/state_ficha_sacada.gd" id="8_j73hr"]
+[ext_resource type="Script" uid="uid://behjwwfwp0fm0" path="res://Scripts/Clases/State_Machine/state_ultima_accion.gd" id="9_pl512"]
+
+[node name="StateMachineStandar" node_paths=PackedStringArray("default_state") instance=ExtResource("1_5bvws")]
+default_state = NodePath("State_Inicio")
+
+[node name="State_Iniciar_Turno" type="Node" parent="." index="0"]
+script = ExtResource("2_s84o2")
+
+[node name="State_Inicio" type="Node" parent="." index="1"]
+script = ExtResource("3_2wmqu")
+
+[node name="State_Tirar_Sacar" type="Node" parent="." index="2"]
+script = ExtResource("4_0kop3")
+
+[node name="State_Dados_Tirados" type="Node" parent="." index="3"]
+script = ExtResource("5_icgd4")
+
+[node name="State_Dado_Seleccionado" type="Node" parent="." index="4"]
+script = ExtResource("6_v8m6i")
+
+[node name="State_Ficha_Seleccionada" type="Node" parent="." index="5"]
+script = ExtResource("7_pr4nq")
+
+[node name="State_Ficha_Sacada" type="Node" parent="." index="6"]
+script = ExtResource("8_j73hr")
+
+[node name="State_Ultima_Accion" type="Node" parent="." index="7"]
+script = ExtResource("9_pl512")
