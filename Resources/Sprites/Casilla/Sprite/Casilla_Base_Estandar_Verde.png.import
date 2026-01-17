@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07j6mpoa03w6"
-path="res://.godot/imported/Casilla_Base_Estandar_All.png-58029218ce75e754374e882fd0cac27d.ctex"
+uid="uid://cg11doahrfxp"
+path="res://.godot/imported/Casilla_Base_Estandar_Verde.png-14b0f5016deec0cbfc3386cc6e1ed77a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Base_Estandar_All.png"
-dest_files=["res://.godot/imported/Casilla_Base_Estandar_All.png-58029218ce75e754374e882fd0cac27d.ctex"]
+source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Base_Estandar_Verde.png"
+dest_files=["res://.godot/imported/Casilla_Base_Estandar_Verde.png-14b0f5016deec0cbfc3386cc6e1ed77a.ctex"]
 
 [params]
 

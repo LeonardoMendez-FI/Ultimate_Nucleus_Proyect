@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jpx2q7jvdivk"
-path="res://.godot/imported/Casilla_Nucleus_Giro_Nucleo_All.png-fb2f19f9f4a05c43c765fe461afaf059.ctex"
+uid="uid://dhaffywa3siyl"
+path="res://.godot/imported/Casilla_Base_Estandar_Morado.png-a494955471ac0ac03182c63bb61bde15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Nucleus_Giro_Nucleo_All.png"
-dest_files=["res://.godot/imported/Casilla_Nucleus_Giro_Nucleo_All.png-fb2f19f9f4a05c43c765fe461afaf059.ctex"]
+source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Base_Estandar_Morado.png"
+dest_files=["res://.godot/imported/Casilla_Base_Estandar_Morado.png-a494955471ac0ac03182c63bb61bde15.ctex"]
 
 [params]
 

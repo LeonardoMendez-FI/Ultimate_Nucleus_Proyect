@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07j6mpoa03w6"
-path="res://.godot/imported/Casilla_Base_Estandar_All.png-58029218ce75e754374e882fd0cac27d.ctex"
+uid="uid://jpx2q7jvdivk"
+path="res://.godot/imported/Casilla_Nucleus_GiroNucleo_All.png-3e6e1d4fb144dc982ec527bfa38e033b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Base_Estandar_All.png"
-dest_files=["res://.godot/imported/Casilla_Base_Estandar_All.png-58029218ce75e754374e882fd0cac27d.ctex"]
+source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Nucleus_GiroNucleo_All.png"
+dest_files=["res://.godot/imported/Casilla_Nucleus_GiroNucleo_All.png-3e6e1d4fb144dc982ec527bfa38e033b.ctex"]
 
 [params]
 

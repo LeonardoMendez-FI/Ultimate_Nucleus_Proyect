@@ -1,3 +1,4 @@
+@tool
 extends Selectionable_Area
 class_name Casilla
 
@@ -24,7 +25,10 @@ class_name Casilla
 @export var sprite : Sprite2D
 @export var icon : AnimatedSprite2D
 
-var index_casilla : int = 0
+@export var index_casilla : int = 0:
+	set(value):
+		index_casilla = value
+		$Label.text = str(index_casilla)
 var fichas:Array[FichaEstandar] = []
 
 var in_rute:bool = false: 
@@ -41,6 +45,7 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	super._ready()
 	set_process(false)
+	inicializar_sprites()
 	
 # FACTORY CASILLA
 func configurar(args := {}) -> void:

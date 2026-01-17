@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b23hv1syuyaal"
-path="res://.godot/imported/Casilla_Tablero_Giro_Nucleo_All.png-6cc03fc1ff621ed746a301071586772e.ctex"
+path="res://.godot/imported/Casilla_Tablero_GiroNucleo_All.png-25f237a500946ac513edf0df17801071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Tablero_Giro_Nucleo_All.png"
-dest_files=["res://.godot/imported/Casilla_Tablero_Giro_Nucleo_All.png-6cc03fc1ff621ed746a301071586772e.ctex"]
+source_file="res://Resources/Sprites/Casilla/Sprite/Casilla_Tablero_GiroNucleo_All.png"
+dest_files=["res://.godot/imported/Casilla_Tablero_GiroNucleo_All.png-25f237a500946ac513edf0df17801071.ctex"]
 
 [params]
 
