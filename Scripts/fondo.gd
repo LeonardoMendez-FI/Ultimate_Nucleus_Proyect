@@ -6,9 +6,9 @@ class_name Fondo
 func _ready() -> void:
 	pass # Replace with function body.
 
-func actualizar_color_fondo(color_jugador: String) -> void:
+func actualizar_color_fondo(color: GameConstants.COLORES_PLAYER) -> void:
 	
-	var ruta_sprite = dir_sprites + "/FondoJugador" + color_jugador.capitalize() + ".png"
+	var ruta_sprite = dir_sprites + "/FondoJugador" + GameConstants.STR_COLORES[color] + ".png"
 	$Fondo_Nuevo.texture = load(ruta_sprite)
 	$Fondo_Nuevo.modulate.a = 0.0
 	$Fondo_Nuevo.visible = true

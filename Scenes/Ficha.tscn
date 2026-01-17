@@ -45,6 +45,7 @@ dir_sprites = "res://Resources/Sprites/Ficha"
 shape = SubResource("CircleShape2D_eesfy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = 1.5707964
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_eesfy")
 animation = &"Estandar"

@@ -34,11 +34,9 @@ var in_rute:bool = false:
 
 
 func _process(_delta: float) -> void:
-	if GameResources.casilla_solver.ordenando:
+	if GameResources.visualizer_solver.ordenando:
 		return
-	for ficha in fichas:
-		ficha.global_rotation = 0
-	GameResources.casilla_solver.reordenar_fichas_visualmente(self)
+	GameResources.visualizer_solver.reordenar_fichas_visualmente(self)
 
 func _ready() -> void:
 	super._ready()
@@ -52,16 +50,22 @@ func configurar(args := {}) -> void:
 	color_habilidad = args.get("color", GameConstants.COLORES_PLAYER.ALL)
 	global_position = args.get("posicion", Vector2.ZERO)
 	selectable = args.get("selectable", false)
-	rotate(args.get("angulo", 0))
+	global_rotation += args.get("angulo", 0)
 
 func inicializar_sprites() -> void:
-	var strings_rute := [tipo_casilla,habilidad,color_habilidad, dir_sprites]
-	for i in range(strings_rute.size()-1):
-		strings_rute[i] = str(strings_rute[i]).capitalize()
 	
-	var ruta_sprite := "{3}/Sprite/Casilla_{0}_{1}_{2}.png".format(strings_rute)
-	print(ruta_sprite)
-	sprite.texture = load(ruta_sprite)
+	var strings_rute = [
+		dir_sprites,
+		GameConstants.STR_TIPOS[tipo_casilla],
+		GameConstants.STR_HABILIDADES[habilidad],
+		GameConstants.STR_COLORES[color_habilidad]
+	]
+	
+	var ruta_sprite := "{0}/Sprite/Casilla_{1}_{2}_{3}.png".format(strings_rute)
+	if FileAccess.file_exists(ruta_sprite):
+		sprite.texture = load(ruta_sprite)
+	else:
+		push_warning("No existe el archivo: " + ruta_sprite)
 
 func _on_nucleo_girando(girando:bool) -> void:
 	if not fichas.is_empty() and girando:

@@ -25,26 +25,32 @@ const FIGURAS = {
 		Trisidecagono = {"Numero_de_entradas": 36, "Numero_Casillas_Lado":2}
 	}
 
-const HABILIDADES_CASILLA = {
-		ESTANDAR = "Estandar", 
-		DOBLE = "Doble", 
-		PROTECCION = "Proteccion", 
-		GIRO_NUCLEO = "Giro_Nucleo",
-		SALIDA = "Salida"
+enum HABILIDADES_CASILLA{ESTANDAR, DOBLE, PROTECCION, GIRO_NUCLEO, SALIDA}
+
+const STR_HABILIDADES:= {
+		HABILIDADES_CASILLA.ESTANDAR: "Estandar", 
+		HABILIDADES_CASILLA.DOBLE: "Doble", 
+		HABILIDADES_CASILLA.PROTECCION: "Proteccion", 
+		HABILIDADES_CASILLA.GIRO_NUCLEO: "GiroNucleo",
+		HABILIDADES_CASILLA.SALIDA: "Salida"
 	}
 
-const TIPO_CASILLA = {
-		BASE = "Base", 
-		TABLERO = "Tablero", 
-		NUCLEUS = "Nucleus"
+enum TIPO_CASILLA{BASE, TABLERO, NUCLEUS}
+
+const STR_TIPOS:= {
+		TIPO_CASILLA.BASE: "Base", 
+		TIPO_CASILLA.TABLERO: "Tablero", 
+		TIPO_CASILLA.NUCLEUS: "Nucleus"
 	}
 
-const COLORES_PLAYER = {
-		ROJO = "Rojo", 
-		AZUL = "Azul", 
-		VERDE = "Verde", 
-		MORADO = "Morado", 
-		ALL = "All"
+enum COLORES_PLAYER{ROJO, AZUL, VERDE, MORADO, ALL}
+
+const STR_COLORES = {
+		COLORES_PLAYER.ROJO:  "Rojo", 
+		COLORES_PLAYER.AZUL: "Azul", 
+		COLORES_PLAYER.VERDE: "Verde", 
+		COLORES_PLAYER.MORADO: "Morado", 
+		COLORES_PLAYER.ALL: "All"
 	}
 
 const GAME_STATES = {

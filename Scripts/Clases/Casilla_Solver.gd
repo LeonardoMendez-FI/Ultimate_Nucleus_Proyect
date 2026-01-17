@@ -3,7 +3,6 @@ class_name CasillaSolver
 
 var tablero:Tablero = null
 var nucleus:Nucleus = null
-var ordenando:bool = false
 
 func caer_in_casilla(dado:Dado_Estandar, ficha_selected:FichaEstandar, casila_selected:Casilla):
 
@@ -53,12 +52,3 @@ func agregar_ficha(ficha:FichaEstandar, casilla:Casilla) -> void:
 
 func eliminar_ficha(ficha:FichaEstandar, casilla:Casilla) -> void:
 	casilla.fichas.erase(ficha)
-	
-func reordenar_fichas_visualmente(casilla:Casilla) -> void:
-	ordenando = true
-	for i in range(casilla.fichas.size()-1, -1, -1):
-		casilla.fichas[i].z_index = i + 3
-		casilla.fichas[i].global_position = \
-		casilla.global_position - Vector2(0, (casilla.fichas[i].z_index-3)*5)
-	
-	ordenando = false

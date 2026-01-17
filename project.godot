@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="NUCLEUS_PROYECT"
+config/name="ULTIMATE NUCELUS"
+run/main_scene="uid://b51j2xae84ryd"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 
 [autoload]
@@ -24,8 +25,12 @@ GameScenes="*res://Scripts/Configuration/Game_Scenes.gd"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=3
 window/stretch/mode="canvas_items"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [gui]
 

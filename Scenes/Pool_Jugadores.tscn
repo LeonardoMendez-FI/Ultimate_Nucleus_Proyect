@@ -35,7 +35,7 @@ offset_bottom = 400.0
 grow_horizontal = 0
 grow_vertical = 1
 script = ExtResource("2_n46ru")
-color = "morado"
+color = 3
 index_base = 5
 
 [node name="CheckButton" type="CheckButton" parent="JugadorMorado"]
@@ -64,7 +64,7 @@ offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
 script = ExtResource("2_n46ru")
-color = "azul"
+color = 1
 index_base = 14
 
 [node name="CheckButton" type="CheckButton" parent="JugadorAzul"]
@@ -96,6 +96,7 @@ offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
 script = ExtResource("2_n46ru")
+color = 0
 index_base = 23
 
 [node name="CheckButton" type="CheckButton" parent="JugadorRojo"]
@@ -124,7 +125,7 @@ offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
 script = ExtResource("2_n46ru")
-color = "verde"
+color = 2
 index_base = 32
 
 [node name="CheckButton" type="CheckButton" parent="JugadorVerde"]

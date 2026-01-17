@@ -36,7 +36,7 @@ func _inicializar_sprites():
 			
 		frames.clear(anim_name) # borra SOLO los frames
 		frames.add_frame(anim_name, load(dir_sprites + dic_rutas[anim_name]\
-		 + propietario.color + ".png"))	
+		 + GameConstants.STR_COLORES[propietario.color] + ".png"))	
 	
 func _actualizar_estado_visual() -> void:
 	
@@ -76,90 +76,21 @@ func regresar_a_base() -> void:
 
 func sacar_de_base() -> void:
 	mover_a_casilla(propietario.casilla_salida)
-	await animable.animacion_terminada
 	GameResources.casilla_solver.capturar_casilla(self)
 	
 func mover_a_casilla(casilla_destino: Casilla) -> void:
 		
 	if casilla_actual:
 		if casilla_actual and casilla_base and is_in_base():
-			_animar_salida_de_base(casilla_destino)
-			await animable.animacion_terminada
+			GameResources.visualizer_solver.animar_ficha_salida(self, casilla_destino, animable)
 		else:
-			_animar_movimiento_normal(casilla_destino)
+			GameResources.visualizer_solver.animar_ficha_move(self, casilla_destino, animable)
 			
 		GameResources.casilla_solver.eliminar_ficha(self, casilla_actual)
 	else:
-		_animar_movimiento_normal(casilla_destino)
+		GameResources.visualizer_solver.animar_ficha_move(self, casilla_destino, animable)
 
 	GameResources.casilla_solver.agregar_ficha(self, casilla_destino)
-
-#region animaciones movimiento
-
-func _animar_movimiento_normal(destino: Casilla) -> void:
-	var inicio := global_position
-	var fin := destino.global_position - Vector2(0, (destino.fichas.size())*5)
-	var duracion := 0.4 #0.4
-	var altura_salto := 30.0
-	
-	animable.play(func(tween):
-		z_index += destino.fichas.size()*50
-		print(z_index,z_index)
-		tween.set_parallel(true)
-
-		# Movimiento base
-		tween.tween_property(
-			self,
-			"global_position",
-			fin,
-			duracion
-		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
-
-		# Arco
-		tween.tween_method(
-			func(t):
-				var y_offset := -sin(t * PI) * altura_salto
-				global_position.y = lerp(inicio.y, fin.y, t) + y_offset,
-			0.0,
-			1.0,
-			duracion
-		)
-
-		# Escala
-		tween.tween_property(self, "scale", Vector2(1.25, 1.25), duracion * 0.5)
-		tween.chain().tween_property(self, "scale", Vector2.ONE, duracion * 0.5)
-	)
-
-		# 👇 Restaurar z cuando termine
-	animable.animacion_terminada.connect(
-		func():
-			animable.animacion_terminada.emit(),
-		CONNECT_ONE_SHOT
-	)
-
-func _animar_salida_de_base(destino: Casilla) -> void:
-	var desaparecer := 0.5 #0.6
-	var aparecer := 0.5 #0.6
-	
-	var tween = create_tween()
-	# Desaparecer
-	tween.tween_property(self, "rotation", rotation + TAU, desaparecer)
-	tween.parallel().tween_property(self, "scale", Vector2.ZERO, desaparecer)
-
-	# Teleport
-	tween.chain().tween_callback(func():
-		global_position = destino.global_position - Vector2(0, (destino.fichas.size())*5))
-
-	# Aparecer
-	tween.chain().tween_property(self, "rotation", rotation + TAU * 2, aparecer)
-	tween.parallel().tween_property(self, "scale", Vector2.ONE, aparecer)
-	
-	# 4️⃣ SOLO aquí arrancamos el movimiento normal
-	tween.chain().tween_callback(func():
-		_animar_movimiento_normal(destino)
-	)
-
-#endregion
 
 #endregion
 
@@ -174,8 +105,6 @@ func mostrar_rutas(mostrar:bool = true) -> void:
 		for casilla in rutas[destino]:
 			casilla.in_rute = mostrar
 		destino.selectable = mostrar
-		if ultima_conexion_usada:
-			ultima_conexion_usada.icon.modulate = GameConstants.RED
 
 func _on_mouse_entered():
 	super._on_mouse_entered()
