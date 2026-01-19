@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bdxu6vfav342o"]
 
 [ext_resource type="Script" uid="uid://blmn1hq2gky6b" path="res://Scripts/Clases/Tablero_Bakery.gd" id="1_wlwk5"]
-[ext_resource type="PackedScene" uid="uid://45l0eq727s56" path="res://Scenes/Casilla.tscn" id="2_djwnx"]
+[ext_resource type="PackedScene" uid="uid://45l0eq727s56" path="res://Scenes/TheGame/Componentes/Casilla.tscn" id="2_djwnx"]
 
 [node name="Tablero Bakery" type="Node"]
 script = ExtResource("1_wlwk5")

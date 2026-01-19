@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dl8c6mnsrujg7"]
 
 [ext_resource type="Script" uid="uid://bkk05efrm5yam" path="res://Scripts/tablero.gd" id="1_2r300"]
-[ext_resource type="Texture2D" uid="uid://bfib61p61uxia" path="res://Resources/Sprites/Tablero/TableroGlobal.png" id="1_a8puo"]
-[ext_resource type="PackedScene" uid="uid://45l0eq727s56" path="res://Scenes/Casilla.tscn" id="2_a8puo"]
+[ext_resource type="Texture2D" uid="uid://bfib61p61uxia" path="res://SpritesGenerales/Crono_sprites/TableroGlobal.png" id="1_a8puo"]
+[ext_resource type="PackedScene" uid="uid://45l0eq727s56" path="res://Scenes/TheGame/Componentes/Casilla.tscn" id="2_a8puo"]
 
 [node name="Tablero" type="Sprite2D"]
 texture = ExtResource("1_a8puo")

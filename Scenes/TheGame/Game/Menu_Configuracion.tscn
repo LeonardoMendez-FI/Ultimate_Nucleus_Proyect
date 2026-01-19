@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://d2m6ws8dg8h14"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 668.0
+offset_top = 58.0
+offset_right = 708.0
+offset_bottom = 98.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Yo"
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/OptionButton"]
+layout_mode = 0
+text = "Hola"
+
+[node name="Label2" type="Label" parent="HBoxContainer/OptionButton"]
+layout_mode = 0
+text = "Yo"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = -253.0
+offset_right = 388.0
+offset_bottom = 411.0
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="MenuBar"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 441.0
+offset_right = 388.0
+offset_bottom = 771.0
+title = "Configuración Jugadores"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuBar/FoldableContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuBar/FoldableContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Tablero"
+
+[node name="Label2" type="Label" parent="MenuBar/FoldableContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="Label3" type="Label" parent="MenuBar/FoldableContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Casillas Especiales"
+
+[node name="Label4" type="Label" parent="MenuBar/FoldableContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Numero Bots"
+
+[node name="Label5" type="Label" parent="MenuBar/FoldableContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Dificultad Bots"
+
+[node name="Label" type="Label" parent="MenuBar/FoldableContainer2"]
+layout_mode = 2
+text = "Hola"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="MenuBar"]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 107.0
+offset_right = 388.0
+offset_bottom = 437.0
+title = "Configuración Jugadores"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MenuBar/FoldableContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MenuBar/FoldableContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Tablero"
+
+[node name="Label2" type="Label" parent="MenuBar/FoldableContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="Label3" type="Label" parent="MenuBar/FoldableContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Casillas Especiales"
+
+[node name="Label4" type="Label" parent="MenuBar/FoldableContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Numero Bots"
+
+[node name="Label5" type="Label" parent="MenuBar/FoldableContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Dificultad Bots"
+
+[node name="Label" type="Label" parent="MenuBar/FoldableContainer"]
+layout_mode = 2
+text = "Hola"

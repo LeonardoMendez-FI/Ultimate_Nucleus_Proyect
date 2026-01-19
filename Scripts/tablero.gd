@@ -25,8 +25,7 @@ func _reconstruir_casillas():
 			casillas_externas.append(node)
 			node.index_casilla = index
 		index+= 1
-		
-			
+				
 func obtener_bases_jugador(base_index:int = 0) -> Array[Casilla]:
 	var bases:Array[Casilla] = []
 	for i in range(GameConfiguration.numero_fichas_jugador):

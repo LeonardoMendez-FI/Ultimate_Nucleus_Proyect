@@ -1,5 +1,5 @@
 extends Node
-class_name Game_Resources
+class_name Node_Game_Resources
 
 var azar = RandomNumberGenerator.new()
 var movement_solver = MovementSolver.new()

@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b01rfsfsclb34"]
+[gd_scene load_steps=6 format=3 uid="uid://b01rfsfsclb34"]
 
-[ext_resource type="PackedScene" uid="uid://bhutsnymk62n7" path="res://Scenes/Jugador.tscn" id="1_cy6bu"]
-[ext_resource type="Script" uid="uid://culfcodeerfgi" path="res://Scripts/Clases/Bot.gd" id="2_n46ru"]
-[ext_resource type="Theme" uid="uid://q2ex7a7g7lg" path="res://Resources/CheckButton_Bot.tres" id="2_xqe8m"]
-[ext_resource type="Script" uid="uid://bfdtqbooodcg6" path="res://Scripts/bot_button.gd" id="3_xqe8m"]
+[ext_resource type="Script" uid="uid://btpkm6wpyin58" path="res://Scripts/Clases/players_solver.gd" id="1_po4mu"]
+[ext_resource type="PackedScene" uid="uid://bhutsnymk62n7" path="res://Scenes/TheGame/Componentes/Jugador.tscn" id="2_r7q0l"]
+[ext_resource type="Script" uid="uid://culfcodeerfgi" path="res://Scripts/Clases/Bot.gd" id="3_gd63g"]
+[ext_resource type="Theme" uid="uid://q2ex7a7g7lg" path="res://Resources/CheckButton_Bot.tres" id="4_bfirp"]
+[ext_resource type="Script" uid="uid://bfdtqbooodcg6" path="res://Scripts/bot_button.gd" id="5_70313"]
 
-[node name="Jugadores" type="Control"]
+[node name="Players_Solver" type="Control"]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -20,8 +21,9 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 mouse_filter = 2
+script = ExtResource("1_po4mu")
 
-[node name="JugadorMorado" parent="." instance=ExtResource("1_cy6bu")]
+[node name="JugadorMorado" parent="." instance=ExtResource("2_r7q0l")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -34,7 +36,7 @@ offset_right = 0.0
 offset_bottom = 400.0
 grow_horizontal = 0
 grow_vertical = 1
-script = ExtResource("2_n46ru")
+script = ExtResource("3_gd63g")
 color = 3
 index_base = 5
 
@@ -47,10 +49,10 @@ offset_top = -136.0
 offset_right = 140.0
 grow_vertical = 0
 focus_mode = 0
-theme = ExtResource("2_xqe8m")
-script = ExtResource("3_xqe8m")
+theme = ExtResource("4_bfirp")
+script = ExtResource("5_70313")
 
-[node name="JugadorAzul" parent="." instance=ExtResource("1_cy6bu")]
+[node name="JugadorAzul" parent="." instance=ExtResource("2_r7q0l")]
 layout_mode = 1
 anchors_preset = 0
 anchor_left = 0.0
@@ -63,7 +65,7 @@ offset_right = 400.0
 offset_bottom = 400.0
 grow_horizontal = 1
 grow_vertical = 1
-script = ExtResource("2_n46ru")
+script = ExtResource("3_gd63g")
 color = 1
 index_base = 14
 
@@ -79,10 +81,10 @@ offset_top = -136.0
 grow_horizontal = 0
 grow_vertical = 0
 focus_mode = 0
-theme = ExtResource("2_xqe8m")
-script = ExtResource("3_xqe8m")
+theme = ExtResource("4_bfirp")
+script = ExtResource("5_70313")
 
-[node name="JugadorRojo" parent="." instance=ExtResource("1_cy6bu")]
+[node name="JugadorRojo" parent="." instance=ExtResource("2_r7q0l")]
 layout_mode = 1
 anchors_preset = 2
 anchor_left = 0.0
@@ -95,7 +97,7 @@ offset_right = 400.0
 offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 0
-script = ExtResource("2_n46ru")
+script = ExtResource("3_gd63g")
 color = 0
 index_base = 23
 
@@ -108,10 +110,10 @@ offset_left = -140.0
 offset_bottom = 136.0
 grow_horizontal = 0
 focus_mode = 0
-theme = ExtResource("2_xqe8m")
-script = ExtResource("3_xqe8m")
+theme = ExtResource("4_bfirp")
+script = ExtResource("5_70313")
 
-[node name="JugadorVerde" parent="." instance=ExtResource("1_cy6bu")]
+[node name="JugadorVerde" parent="." instance=ExtResource("2_r7q0l")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -124,7 +126,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 0
 grow_vertical = 0
-script = ExtResource("2_n46ru")
+script = ExtResource("3_gd63g")
 color = 2
 index_base = 32
 
@@ -133,8 +135,8 @@ layout_mode = 1
 offset_right = 140.0
 offset_bottom = 136.0
 focus_mode = 0
-theme = ExtResource("2_xqe8m")
-script = ExtResource("3_xqe8m")
+theme = ExtResource("4_bfirp")
+script = ExtResource("5_70313")
 
 [connection signal="toggled" from="JugadorMorado/CheckButton" to="JugadorMorado" method="_on_check_button_toggled"]
 [connection signal="toggled" from="JugadorAzul/CheckButton" to="JugadorAzul" method="_on_check_button_toggled"]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chh4sxxo55e77"]
+
+[ext_resource type="Script" uid="uid://bnfulgp8eei8d" path="res://Scripts/Clases/Nucleus_Solver.gd" id="1_g6mru"]
+
+[node name="Nucleus_Solver" type="Node2D"]
+script = ExtResource("1_g6mru")

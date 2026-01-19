@@ -1,0 +1,445 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://Scripts/nucleus.gd" id="1_6ep4s"]
+[ext_resource type="Script" path="res://Scripts/Clases/Animable.gd" id="2_6a21n"]
+[ext_resource type="PackedScene" path="res://Scenes/TheGame/Componentes/Casilla.tscn" id="3_t70yx"]
+[ext_resource type="Script" path="res://Scripts/casilla.gd" id="4_ikyn2"]
+
+[node name="@Sprite2D@2" type="Sprite2D" node_paths=PackedStringArray("animable")]
+script = ExtResource("1_6ep4s")
+animable = NodePath("@Node@3")
+numero_entradas = 18
+
+[node name="@Node@3" type="Node" parent="."]
+script = ExtResource("2_6a21n")
+
+[node name="Casilla_Nucleus_00" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(219.16283, 19.174263)
+rotation = 0.08726646
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_01" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(215.83325, -18.882965)
+rotation = -0.08726642
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 1
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_02" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(212.50368, -56.94019)
+rotation = -0.2617994
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 2
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_03" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(196.35857, -91.56351)
+rotation = -0.4363322
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 3
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_04" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(180.21346, -126.18681)
+rotation = -0.61086524
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 4
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_05" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(153.20013, -153.20013)
+rotation = -0.7853982
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 5
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_06" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(126.18681, -180.21346)
+rotation = -0.95993114
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 6
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_07" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(91.5635, -196.35857)
+rotation = -1.1344641
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 7
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_08" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(56.94019, -212.50368)
+rotation = -1.3089969
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 8
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_09" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(18.882961, -215.83325)
+rotation = -1.4835299
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 9
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_10" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-19.174263, -219.16283)
+rotation = -1.6580628
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 10
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_11" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-56.07514, -209.27527)
+rotation = -1.8325956
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 11
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_12" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-92.97602, -199.38771)
+rotation = -2.0071287
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 12
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_13" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-124.26976, -177.4756)
+rotation = -2.1816616
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 13
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_14" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-155.56349, -155.56349)
+rotation = -2.3561945
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 14
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_15" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-177.4756, -124.26976)
+rotation = -2.5307274
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 15
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_16" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-199.38771, -92.97602)
+rotation = -2.7052603
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 16
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_17" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-209.27527, -56.07514)
+rotation = -2.8797934
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 17
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_18" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-219.16283, -19.174263)
+rotation = -3.0543263
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 18
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_19" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-215.83325, 18.882965)
+rotation = 3.0543263
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 19
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_20" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-212.50368, 56.94019)
+rotation = 2.8797932
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 20
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_21" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-196.35857, 91.56351)
+rotation = 2.7052605
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 21
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_22" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-180.21346, 126.18681)
+rotation = 2.5307274
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 22
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_23" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-153.20013, 153.20013)
+rotation = 2.3561945
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 23
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_24" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-126.18681, 180.21346)
+rotation = 2.1816616
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 24
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_25" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-91.5635, 196.35857)
+rotation = 2.0071285
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 25
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_26" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(-56.94019, 212.50368)
+rotation = 1.8325957
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 26
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_27" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(-18.882961, 215.83325)
+rotation = 1.6580627
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 27
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_28" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(19.174263, 219.16283)
+rotation = 1.4835298
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 28
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_29" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(56.07514, 209.27527)
+rotation = 1.308997
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 29
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_30" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(92.97602, 199.38771)
+rotation = 1.134464
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 30
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_31" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(124.26976, 177.4756)
+rotation = 0.95993114
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 31
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_32" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(155.56349, 155.56349)
+rotation = 0.7853982
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 32
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_33" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(177.4756, 124.26976)
+rotation = 0.61086524
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 33
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_34" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("3_t70yx")]
+position = Vector2(199.38771, 92.97602)
+rotation = 0.43633235
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 34
+metadata/_custom_type_script = "uid://w0huj04y1ti5"
+
+[node name="Casilla_Nucleus_35" type="Area2D" parent="." node_paths=PackedStringArray("sprite", "icon") groups=["Casilla Nucleus"] instance=ExtResource("3_t70yx")]
+position = Vector2(209.27527, 56.07514)
+rotation = 0.2617993
+input_pickable = false
+script = ExtResource("4_ikyn2")
+tipo_casilla = 2
+dir_sprites = "res://Resources/Sprites/Casilla"
+sprite = NodePath("Sprite")
+icon = NodePath("Icono")
+index_casilla = 35
+metadata/_custom_type_script = "uid://w0huj04y1ti5"

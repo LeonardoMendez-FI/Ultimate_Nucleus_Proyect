@@ -1,5 +1,5 @@
 extends Node
-class_name Game_Constants
+class_name Node_Game_Constants
 
 const NUCLEUS_RADIUS = 220
 const RADIO_INT = 295
@@ -16,13 +16,15 @@ const COLORES = {
 	GRAY = Color(0.693, 0.502, 0.428, 1.0)
 }
 
-const FIGURAS = {
-		Triangulo = {"Numero_de_entradas": 3, "Numero_Casillas_Lado": 9},
-		Cuadrtado = {"Numero_de_entradas": 4, "Numero_Casillas_Lado": 7},
-		Hexagono = {"Numero_de_entradas": 6, "Numero_Casillas_Lado": 5},
-		Dodecagono = {"Numero_de_entradas": 12, "Numero_Casillas_Lado":3},
-		Bifordecagono = {"Numero_de_entradas": 24, "Numero_Casillas_Lado":2},
-		Trisidecagono = {"Numero_de_entradas": 36, "Numero_Casillas_Lado":2}
+enum FIGURAS{Triangulo, Cuadrado, Hexagono, Dodecagono, Octadecagono, Trisidecagono}
+
+const DIC_FIGURAS = {
+		FIGURAS.Triangulo: {Nombre = "Triangulo", Numero_Entradas = 3, Numero_Casillas_Lado = 9},
+		FIGURAS.Cuadrado: {Nombre = "Cuadrado", Numero_Entradas = 4, Numero_Casillas_Lado  =  7},
+		FIGURAS.Hexagono: {Nombre = "Hexagono", Numero_Entradas = 6, Numero_Casillas_Lado = 5},
+		FIGURAS.Dodecagono: {Nombre = "Dodecagono", Numero_Entradas = 12, Numero_Casillas_Lado = 3},
+		FIGURAS.Octadecagono: {Nombre = "Octadecagono", Numero_Entradas = 18, Numero_Casillas_Lado = 3},
+		FIGURAS.Trisidecagono: {Nombre = "Trisidecagono", Numero_Entradas = 36, Numero_Casillas_Lado = 2}
 	}
 
 enum HABILIDADES_CASILLA{ESTANDAR, DOBLE, PROTECCION, GIRO_NUCLEO, SALIDA}
@@ -62,4 +64,12 @@ const GAME_STATES = {
 	Ficha_Seleccionada = "State_Ficha_Seleccionada",
 	Ultima_Accion = "State_Ultima_Accion",
 	Ficha_Sacada = "State_Ficha_Sacada"
+}
+
+enum DIFICULTAD_BOTS{FACIL, MEDIO, DIFICIL}
+
+const STR_BOTS = {
+	DIFICULTAD_BOTS.FACIL : "Facil",
+	DIFICULTAD_BOTS.MEDIO : "Medio",
+	DIFICULTAD_BOTS.DIFICIL : "Dificil"
 }

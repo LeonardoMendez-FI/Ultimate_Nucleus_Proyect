@@ -2,7 +2,7 @@
 extends Node
 class_name TableroBaker
 
-@export var escena_casilla: PackedScene
+var escena_casilla:= preload(GameScenes.scene_casilla)
 var nuevo_tablero:Tablero
 
 @export var guardar:bool = false:
@@ -51,5 +51,5 @@ func _crear_casilla(args:={}, vision:bool = true) -> Casilla:
 func guardar_como_escena():
 	var escena = PackedScene.new()
 	escena.pack(nuevo_tablero)
-	ResourceSaver.save(escena, "res://Scenes/Tablero.tscn")
+	ResourceSaver.save(escena, "res://Scenes/TheGame/Componentes/Tablero.tscn")
 	print("✅ Guardado!")

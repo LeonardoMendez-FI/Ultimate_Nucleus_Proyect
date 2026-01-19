@@ -37,6 +37,7 @@ version_control/autoload_on_startup=true
 "Casilla Tablero"=""
 "Casilla Nucleus"=""
 "Casilla Base"=""
+"Nucleus Vertice"=""
 
 [gui]
 

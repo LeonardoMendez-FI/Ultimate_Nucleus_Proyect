@@ -20,8 +20,10 @@ func configurar(bases, salida) -> void:
 
 func crear_fichas(bases:Array) -> void:
 	
+	const scene_ficha = preload(GameScenes.scene_ficha)
 	for i in range(GameConfiguration.numero_fichas_jugador):
-		var nueva_ficha = Game_Scenes.scene_ficha.instantiate()
+		
+		var nueva_ficha:FichaEstandar = scene_ficha.instantiate()
 		nueva_ficha.call_deferred("configurar", self, bases[i])
 		fichas.append(nueva_ficha)
 		

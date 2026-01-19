@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://dumwgp5gm511j"]
 
-[ext_resource type="PackedScene" uid="uid://b223tlyf8bvhg" path="res://Scenes/StateMachine.tscn" id="1_5bvws"]
+[ext_resource type="PackedScene" uid="uid://b223tlyf8bvhg" path="res://Scenes/TheGame/Componentes/StateMachine.tscn" id="1_5bvws"]
 [ext_resource type="Script" uid="uid://bilg6qjxgl464" path="res://Scripts/Clases/State_Machine/state_iniciar_turno.gd" id="2_s84o2"]
 [ext_resource type="Script" uid="uid://c7pbf8j8rkq52" path="res://Scripts/Clases/State_Machine/state_inicio.gd" id="3_2wmqu"]
 [ext_resource type="Script" uid="uid://cs6y544sft0vk" path="res://Scripts/Clases/State_Machine/state_sacar_tirar.gd" id="4_0kop3"]

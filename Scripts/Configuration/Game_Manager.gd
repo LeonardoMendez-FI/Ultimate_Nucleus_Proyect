@@ -4,7 +4,8 @@ class_name Game_Manager
 @onready var state_machine:StateMachine = $Game_States
 @onready var jugadores: Array = $Componentes/Jugadores.get_children()
 @onready var tablero:Tablero = $Componentes/Tablero
-@onready var nucleus:Nucleus = $Componentes/Nucleus
+@export var escene_nucleus:PackedScene
+var nucleus:Nucleus
 @onready var fondo:Fondo = $Componentes/Fondo
 @onready var dados:Array = $Componentes/Dados.get_children()
 @onready var boton_tirar:Selectionable_Button = $Componentes/Botones/Boton_Tirar
@@ -45,7 +46,8 @@ func _inicializar_juego() -> void:
 	
 
 func _configurar_tablero() -> void:
-	nucleus.configurar()
+	nucleus = escene_nucleus.instantiate()
+	add_child(nucleus)
 	nucleus.conectar_con_tablero(tablero)
 	
 	GameResources.casilla_solver.tablero = tablero

@@ -1,0 +1,215 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfckgbfrtvb2f"]
+
+[ext_resource type="FontFile" uid="uid://c8ulqgmeyre4e" path="res://Resources/Font_Generales/MouseMemoirs-Regular.ttf" id="1_0tpum"]
+[ext_resource type="Texture2D" uid="uid://cgq3pi8v8oxds" path="res://Resources/Sprites/Casilla/Sprite/Casilla_Tablero_Salida_Verde.png" id="2_7xuk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3d2cl"]
+
+[sub_resource type="Theme" id="Theme_ods2f"]
+TabContainer/colors/font_selected_color = Color(0.5590729, 0.4130158, 9.62615e-08, 1)
+TabContainer/colors/font_unselected_color = Color(0.40122566, 0.001942557, 0.84882814, 1)
+TabContainer/constants/outline_size = 24
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 32
+TabContainer/fonts/font = ExtResource("1_0tpum")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_3d2cl")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 393.5
+offset_top = 110.0
+offset_right = 925.5
+offset_bottom = 633.0
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+metadata/_tab_index = 3
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ods2f")
+current_tab = 0
+clip_tabs = false
+use_hidden_tabs_for_min_size = true
+tab_focus_mode = 0
+
+[node name="Tablero" type="Control" parent="MarginContainer/PanelContainer/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero"]
+layout_mode = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Numero Bots"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Dificultad Bots"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Tablero/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Jugador" type="PanelContainer" parent="MarginContainer/PanelContainer/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador"]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Numero Jugadores"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Subir"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Button2" type="Button" parent="MarginContainer/PanelContainer/TabContainer/Jugador/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Bajar"
+icon = ExtResource("2_7xuk3")
+expand_icon = true
