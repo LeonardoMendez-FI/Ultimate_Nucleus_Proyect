@@ -1,2 +1,0 @@
-extends Selectionable_Button
-class_name BotonGiro

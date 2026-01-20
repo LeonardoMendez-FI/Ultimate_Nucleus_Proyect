@@ -1,38 +1,39 @@
 extends Node
-class_name Node_Game_Configuration
+class_name NodeGameConfiguration
 
 signal active_players_changed(num_active_player)
 signal active_bots_changed(num_active_bots)
-signal dificult_bots_changed(dificult)
-signal figura_nucleo_changed(figura)
+signal bots_dificult_changed(dificult)
+signal nucleus_shape_changed(figura)
 
-var numero_fichas_jugador:int = 5
+var player_tokens_number:int = 5
 
-var numero_jugadores_activos:int = 4:
+var active_players_number:int = 4:
 	set(value):
-		if value <= 0 or value > 4:
+		if value < 2 or value > 4:
 			return
 			
-		numero_jugadores_activos = value
-		if numero_bots_activos >= numero_jugadores_activos:
-			numero_bots_activos = numero_jugadores_activos - 1
+		active_players_number = value
+		
+		if active_bots_number >= active_players_number:
+			active_bots_number = active_players_number - 1
 		active_players_changed.emit(value)
 
-var numero_bots_activos:int = 0:
+var active_bots_number:int = 0:
 	set(value):
 		if value < 0 or value > 3:
 			return
 			
-		numero_bots_activos = value
+		active_bots_number = value
 		active_bots_changed.emit(value)
 
-var dificultad_bots:= GameConstants.DIFICULTAD_BOTS.MEDIO:
+var bots_dificult:= GameConstants.BOTS_DIFICULT.MEDIUM:
 	set(value):
-		dificultad_bots = value
-		dificult_bots_changed.emit(value)
+		bots_dificult = value
+		bots_dificult_changed.emit(value)
 
-var figura_nucleo:= GameConstants.FIGURAS.Triangulo:
+var nucleus_shape:= GameConstants.NUCLEUS_SHAPES.Triangle:
 	set(value):
-		figura_nucleo = value
-		figura_nucleo_changed.emit(value)
+		nucleus_shape = value
+		nucleus_shape_changed.emit(value)
 		

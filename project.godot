@@ -34,10 +34,10 @@ version_control/autoload_on_startup=true
 
 [global_group]
 
-"Casilla Tablero"=""
-"Casilla Nucleus"=""
-"Casilla Base"=""
-"Nucleus Vertice"=""
+"Base Tile"=""
+"Nucleus Tile"=""
+"Board Tile"=""
+"Nucleus Vertex"=""
 
 [gui]
 

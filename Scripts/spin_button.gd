@@ -1,0 +1,2 @@
+extends SelectableButton
+class_name BotonGiro

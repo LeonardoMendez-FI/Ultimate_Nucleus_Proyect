@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://cf7veo37jbvyv"]
+
+[ext_resource type="PackedScene" uid="uid://b223tlyf8bvhg" path="res://Scenes/StateMachines/StateMachine.tscn" id="1_skcd2"]
+[ext_resource type="Script" uid="uid://cbw44bjqb71tx" path="res://Scripts/Clases/State_Machine/Player_State_Machine/player_state_active.gd" id="2_w3mdy"]
+[ext_resource type="Script" uid="uid://mywyn76vaf7y" path="res://Scripts/Clases/State_Machine/Player_State_Machine/player_state_bot_facil.gd" id="3_7a8bo"]
+[ext_resource type="Script" uid="uid://cp6x6xvywl45s" path="res://Scripts/Clases/State_Machine/Player_State_Machine/player_state_bot_medio.gd" id="4_auptq"]
+[ext_resource type="Script" uid="uid://b57dmctl50y25" path="res://Scripts/Clases/State_Machine/Player_State_Machine/player_state_bot_dificil.gd" id="5_empmm"]
+[ext_resource type="Script" uid="uid://262gam6uv5t4" path="res://Scripts/Clases/State_Machine/Player_State_Machine/player_state_inactive.gd" id="6_cnl5p"]
+
+[node name="PlayerStateMachine" node_paths=PackedStringArray("default_state") instance=ExtResource("1_skcd2")]
+default_state = NodePath("Player_State_Active")
+
+[node name="Player_State_Active" type="Node" parent="." index="0"]
+script = ExtResource("2_w3mdy")
+
+[node name="Player_State_Bot_Facil" type="Node" parent="." index="1"]
+script = ExtResource("3_7a8bo")
+
+[node name="Player_State_Bot_Medio" type="Node" parent="." index="2"]
+script = ExtResource("4_auptq")
+
+[node name="Player_State_Bot_Dificil" type="Node" parent="." index="3"]
+script = ExtResource("5_empmm")
+
+[node name="Player_State_Inactive" type="Node" parent="." index="4"]
+script = ExtResource("6_cnl5p")

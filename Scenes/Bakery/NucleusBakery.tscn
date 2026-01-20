@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs3rmu74kbq2d"]
+
+[ext_resource type="Script" uid="uid://bb3jn30hn0trn" path="res://Scripts/Clases/Nucleus_Bakery.gd" id="1_jph3w"]
+
+[node name="Nucleus Bakery" type="Node"]
+script = ExtResource("1_jph3w")

@@ -1,112 +1,113 @@
-# Nucleus_Bakery.gd - SÓLO para generar
+# Nucleus_Bakery.gd - SÓLO para create
 extends Node
 class_name NucleusBakery
 
-var generando := false
-var nuevo_nucleus:Nucleus
-const scene_casilla = preload(GameScenes.scene_casilla)
+var building := false
+var new_nucleus:NucleusClass
+const tile_scene = preload(GameScenes.tile_scene)
 
 @export var guardar:bool = false:
 	set(value):
 		if value:
-			guardar_como_escena()
+			save_as_escene()
 		guardar = false
 
-@export var figura: = GameConstants.FIGURAS.Triangulo:
+@export var nucleus_shape: = GameConstants.NUCLEUS_SHAPES.Triangle:
 	set(value):
-		figura = value
-		numero_entradas = GameConstants.DIC_FIGURAS[figura].Numero_Entradas
-		numero_casillas_lado = GameConstants.DIC_FIGURAS[figura].Numero_Casillas_Lado
+		nucleus_shape = value
+		entrances_number = GameConstants.DIC_FIGURAS[nucleus_shape].Entrances_Number
+		side_tiles_number = GameConstants.DIC_FIGURAS[nucleus_shape].Side_Tiles_Number
 		
-		if nuevo_nucleus and is_instance_valid(nuevo_nucleus):
-			nuevo_nucleus.queue_free()
+		if new_nucleus and is_instance_valid(new_nucleus):
+			new_nucleus.queue_free()
 		
-		generar()
+		create()
 		
-var numero_entradas : int
-var numero_casillas_lado : int 
+var entrances_number : int
+var side_tiles_number : int 
 
 func _ready():
 	# Este script SÓLO genera y guarda
-	generar()
+	create()
 
 
-func generar():
-	if generando:
+func create():
+	if building:
 		return
-	generando = true
+	building = true
 	# Crear tablero correctamente
-	nuevo_nucleus = Nucleus.new()
-	add_child(nuevo_nucleus)
+	new_nucleus = NucleusClass.new()
+	add_child(new_nucleus)
+	new_nucleus.owner = self
+
+	new_nucleus.entrances_number = entrances_number
 	
-	nuevo_nucleus.numero_entradas = numero_entradas
 	var anim = Animable.new()
-	nuevo_nucleus.animable = anim
-	nuevo_nucleus.add_child(anim)
-	anim.owner = nuevo_nucleus
+	new_nucleus.animable = anim
+	new_nucleus.add_child(anim)
+	anim.owner = new_nucleus
+	anim.name = "Animable"
+	
 
-	# CLAVE: owner para que se pueda guardar
-	nuevo_nucleus.owner = self
+	call_deferred("_nucleus_builder")	
+	call_deferred("_finished_creation")
 
-	call_deferred("_crear_nucleo")	
-	call_deferred("_fin_generar")
+func _finished_creation():
+	building = false
 
-func _fin_generar():
-	generando = false
+func _nucleus_builder() -> void:
 
-func _crear_nucleo() -> void:
+	var vertexs: Array[Vector2] = []
 
-	var vertices: Array[Vector2] = []
-
-	for i in range(numero_entradas):
-		var angulo := deg_to_rad(-i * (360.0 / numero_entradas) + 5)
-		vertices.append(
-			nuevo_nucleus.global_position +
+	for i in range(entrances_number):
+		var radial_angle := deg_to_rad(-i * (360.0 / entrances_number) + 5)
+		vertexs.append(
+			new_nucleus.global_position +
 			Vector2(
-				Game_Constants.NUCLEUS_RADIUS * cos(angulo),
-				Game_Constants.NUCLEUS_RADIUS * sin(angulo)
+				GameConstants.NUCLEUS_RADIUS * cos(radial_angle),
+				GameConstants.NUCLEUS_RADIUS * sin(radial_angle)
 			)
 		)
 
-	var casilla_idx := 0
+	var tile_idx := 0
 
-	for i in range(numero_entradas):
-		var start: Vector2 = vertices[i]
-		var end: Vector2 = vertices[(i + 1) % numero_entradas]
-		var dir_lado := (end - start).normalized()
-		var normal := Vector2(-dir_lado.y, dir_lado.x)
-		var angulo_lado := GameResources.visualizer_solver.obtener_rotacion(normal)
+	for i in range(entrances_number):
+		var start: Vector2 = vertexs[i]
+		var end: Vector2 = vertexs[(i + 1) % entrances_number]
+		var side_direction := (end - start).normalized()
+		var normal := Vector2(-side_direction.y, side_direction.x)
+		var side_angle := GameResources.visualizer_solver.get_rotation(normal)
 
-		for j in range(numero_casillas_lado - 1):
-			var t := float(j) / float(numero_casillas_lado - 1)
+		for j in range(side_tiles_number - 1):
+			var t := float(j) / float(side_tiles_number - 1)
 			var pos := start.lerp(end, t)
-			var nueva_casilla: Casilla 
-			var angulo
-			if j>0: angulo = angulo_lado 
-			else: angulo = GameResources.visualizer_solver.obtener_rotacion(pos)
+			var new_tile: TileClass 
+			var radial_angle
+			if j>0: radial_angle = side_angle 
+			else: radial_angle = GameResources.visualizer_solver.get_rotation(pos)
 			
-			nueva_casilla = _crear_casilla({"posicion":pos, "index":casilla_idx, 
-			"tipo":GameConstants.TIPO_CASILLA.NUCLEUS, "angulo":angulo})
+			new_tile = _create_tile({"current_position":pos, "index":tile_idx, 
+			"type":GameConstants.TILE_TYPES.NUCLEUS, "radial_angle":radial_angle})
 
 			# Vértice / Entrada-Salida
 			if j == 0:
-				nueva_casilla.add_to_group("Nucleus Vertice", true)
+				new_tile.add_to_group("Nucleus Vertex", true)
 
-			casilla_idx += 1
+			tile_idx += 1
 			
-func _crear_casilla(args:={}) -> Casilla:
+func _create_tile(args:={}) -> TileClass:
 
-	var nueva_casilla:Casilla = scene_casilla.instantiate()
-	nueva_casilla.configurar(args)
-	nuevo_nucleus.add_child(nueva_casilla)
-	nueva_casilla.owner = nuevo_nucleus
-	nueva_casilla.name = "Casilla_Nucleus_%02d" % [args["index"]]
-	nueva_casilla.add_to_group("Casilla Nucleus", true)
+	var new_tile:TileClass = tile_scene.instantiate()
+	new_tile.configurate(args)
+	new_nucleus.add_child(new_tile)
+	new_tile.owner = new_nucleus
+	new_tile.name = "Nucleus_Tile_%02d" % [args["index"]]
+	new_tile.add_to_group("Nucleus Tile", true)
 	
-	return nueva_casilla
+	return new_tile
 	
-func guardar_como_escena():
-	var escena = PackedScene.new()
-	escena.pack(nuevo_nucleus)
-	ResourceSaver.save(escena, GameScenes.scene_nucleus%[GameConstants.DIC_FIGURAS[figura].Nombre])
+func save_as_escene():
+	var escene = PackedScene.new()
+	escene.pack(new_nucleus)
+	ResourceSaver.save(escene, GameScenes.scene_nucleus%[GameConstants.SHAPES_DICT[nucleus_shape].Name])
 	print("✅ Guardado!")

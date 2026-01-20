@@ -1,20 +1,20 @@
 extends Node
-class_name Node_Game_Scenes
+class_name NodeGameScenes
 
 # JUEGO
-const scene_juego :String = "res://Scenes/TheGame/Game/Game.tscn"
-const scene_fondo :String = "res://Scenes/TheGame/Componentes/Fondo.tscn"
+const game_scene:String = "res://Scenes/TheGame/Game/Game.tscn"
+const backgorund_scene:String = "res://Scenes/TheGame/Components/Background.tscn"
 
 # COMPONENTES
 # Jugador
-const scene_jugador :String = "res://Scenes/TheGame/Componentes/Jugador.tscn"
-const scene_ficha :String = "res://Scenes/TheGame/Componentes/Ficha.tscn"
+const player_scene:String = "res://Scenes/TheGame/Components/Player.tscn"
+const token_scene:String = "res://Scenes/TheGame/Components/Token.tscn"
 
 # Tablero
-const scene_tablero_bakery :String = "res://Scenes/Bakery/tablero_bakery.tscn"
-const scene_nucleus_bakery : String = "res://Scenes/Bakery/nucleus_bakery.tscn"
+const board_bakery_scene:String = "res://Scenes/Bakery/BoardBakery.tscn"
+const nucleus_bakery_scene: String = "res://Scenes/Bakery/NucleusBakery.tscn"
 
-const scene_tablero :String = "res://Scenes/TheGame/Componentes/Tablero.tscn"
-const scene_nucleus : String = "res://Scenes/TheGame/Componentes/Nucleus/Nucleus_%s.tscn"
+const board_scene:String = "res://Scenes/TheGame/Components/Board.tscn"
+const nucleus_scene:String = "res://Scenes/TheGame/Components/Nucleus/Nucleus_%s.tscn"
 
-const scene_casilla : String = "res://Scenes/TheGame/Componentes/Casilla.tscn"
+const tile_scene:String = "res://Scenes/TheGame/Components/Tile.tscn"

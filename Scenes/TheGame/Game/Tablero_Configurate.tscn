@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfqxq8xsjufc0"]
 
-[ext_resource type="PackedScene" uid="uid://dl8c6mnsrujg7" path="res://Scenes/TheGame/Componentes/Tablero.tscn" id="1_5jgdb"]
+[ext_resource type="PackedScene" uid="uid://dl8c6mnsrujg7" path="res://Scenes/TheGame/Components/Board.tscn" id="1_5jgdb"]
 [ext_resource type="Texture2D" uid="uid://bfib61p61uxia" path="res://SpritesGenerales/Crono_sprites/TableroGlobal.png" id="2_7md3r"]
 
 [node name="Tablero" instance=ExtResource("1_5jgdb")]

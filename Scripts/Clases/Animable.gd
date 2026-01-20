@@ -1,7 +1,7 @@
 extends Node
 class_name Animable
 
-signal animacion_terminada
+signal finished_animation
 
 var tween: Tween
 
@@ -15,4 +15,4 @@ func play(tween_func: Callable) -> void:
 	tween.finished.connect(_on_finished)
 
 func _on_finished() -> void:
-	animacion_terminada.emit()
+	finished_animation.emit()

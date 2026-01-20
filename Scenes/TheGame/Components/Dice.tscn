@@ -1,0 +1,134 @@
+[gd_scene load_steps=17 format=3 uid="uid://dixgoarce81g1"]
+
+[ext_resource type="Script" uid="uid://d4lkg4msnlbgl" path="res://Scripts/dice.gd" id="1_j6u44"]
+[ext_resource type="Texture2D" uid="uid://8beanuwblq3y" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_1.png" id="2_juoq4"]
+[ext_resource type="Texture2D" uid="uid://cgap6lyqpqkfc" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_2.png" id="3_dhhte"]
+[ext_resource type="Texture2D" uid="uid://0f14avslly6n" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_3.png" id="4_7u7uu"]
+[ext_resource type="Texture2D" uid="uid://blcftakdxse1o" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_4.png" id="5_q3mpu"]
+[ext_resource type="Texture2D" uid="uid://cto0gx62uenaq" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_5.png" id="6_7p2ts"]
+[ext_resource type="Texture2D" uid="uid://cnyse3m5rpfm8" path="res://SpritesGenerales/Crono_sprites/DadoEstandar_6.png" id="7_n8k38"]
+[ext_resource type="Texture2D" uid="uid://cj7ce1qulx7yx" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_1.png" id="8_ah0ln"]
+[ext_resource type="Texture2D" uid="uid://cuy0rh0fge8wc" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_2.png" id="9_7y78x"]
+[ext_resource type="Texture2D" uid="uid://bj8yysh441oib" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_3.png" id="10_b25l0"]
+[ext_resource type="Texture2D" uid="uid://cju4mm2en6gjl" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_4.png" id="11_uudhp"]
+[ext_resource type="Texture2D" uid="uid://dh4w0m0oib2cj" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_5.png" id="12_dokha"]
+[ext_resource type="Texture2D" uid="uid://dnk06ico4o5li" path="res://SpritesGenerales/Crono_sprites/DadoSeleccionado_6.png" id="13_fyahm"]
+[ext_resource type="Script" uid="uid://dd3fm2fckrvy" path="res://Scripts/Clases/Animable.gd" id="14_juoq4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yqj1p"]
+size = Vector2(119, 115)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5eha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_ah0ln")
+}],
+"loop": true,
+"name": &"Selected_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_7y78x")
+}],
+"loop": true,
+"name": &"Selected_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_b25l0")
+}],
+"loop": true,
+"name": &"Selected_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_uudhp")
+}],
+"loop": true,
+"name": &"Selected_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_dokha")
+}],
+"loop": true,
+"name": &"Selected_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_fyahm")
+}],
+"loop": true,
+"name": &"Selected_6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_juoq4")
+}],
+"loop": true,
+"name": &"Standard_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dhhte")
+}],
+"loop": true,
+"name": &"Standard_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_7u7uu")
+}],
+"loop": true,
+"name": &"Standard_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_q3mpu")
+}],
+"loop": true,
+"name": &"Standard_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7p2ts")
+}],
+"loop": true,
+"name": &"Standard_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_n8k38")
+}],
+"loop": true,
+"name": &"Standard_6",
+"speed": 5.0
+}]
+
+[node name="Dado" type="Area2D"]
+script = ExtResource("1_j6u44")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_yqj1p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_y5eha")
+animation = &"Selected_2"
+
+[node name="Animable" type="Node" parent="."]
+script = ExtResource("14_juoq4")
+metadata/_custom_type_script = "uid://dd3fm2fckrvy"

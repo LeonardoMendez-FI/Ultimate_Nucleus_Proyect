@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://df4nsrbakp7ru"]
 
-[ext_resource type="PackedScene" uid="uid://dfbiritjfugho" path="res://Scenes/TheGame/Componentes/Fondo.tscn" id="1_bfouk"]
-[ext_resource type="PackedScene" uid="uid://dl8c6mnsrujg7" path="res://Scenes/TheGame/Componentes/Tablero.tscn" id="2_k8qty"]
-[ext_resource type="PackedScene" uid="uid://chh4sxxo55e77" path="res://Scenes/TheGame/Componentes/Nucleus/Nucleus_Solver.tscn" id="3_2ln7o"]
-[ext_resource type="PackedScene" uid="uid://b01rfsfsclb34" path="res://Scenes/TheGame/Componentes/Players_Solver.tscn" id="4_5dvjh"]
-[ext_resource type="PackedScene" uid="uid://dixgoarce81g1" path="res://Scenes/TheGame/Componentes/Dado.tscn" id="5_m25ny"]
-[ext_resource type="PackedScene" uid="uid://by6a45ibj34d4" path="res://Scenes/TheGame/Componentes/Boton_girar.tscn" id="6_nhynd"]
+[ext_resource type="PackedScene" uid="uid://dfbiritjfugho" path="res://Scenes/TheGame/Components/Background.tscn" id="1_bfouk"]
+[ext_resource type="PackedScene" uid="uid://dl8c6mnsrujg7" path="res://Scenes/TheGame/Components/Board.tscn" id="2_k8qty"]
+[ext_resource type="PackedScene" uid="uid://chh4sxxo55e77" path="res://Scenes/TheGame/Components/Nucleus/Nucleus_Solver.tscn" id="3_2ln7o"]
+[ext_resource type="PackedScene" uid="uid://b01rfsfsclb34" path="res://Scenes/TheGame/Components/PlayersSolver.tscn" id="4_5dvjh"]
+[ext_resource type="PackedScene" uid="uid://dixgoarce81g1" path="res://Scenes/TheGame/Components/Dice.tscn" id="5_m25ny"]
+[ext_resource type="PackedScene" uid="uid://by6a45ibj34d4" path="res://Scenes/TheGame/Components/SpinButton.tscn" id="6_nhynd"]
 
-[node name="Componentes" type="Node2D"]
+[node name="Components" type="Node2D"]
 
-[node name="Fondo" parent="." instance=ExtResource("1_bfouk")]
+[node name="Background" parent="." instance=ExtResource("1_bfouk")]
 
 [node name="Tablero" parent="." instance=ExtResource("2_k8qty")]
 

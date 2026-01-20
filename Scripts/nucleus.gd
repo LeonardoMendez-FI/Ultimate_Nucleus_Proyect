@@ -1,99 +1,105 @@
 extends Sprite2D
-class_name Nucleus
+class_name NucleusClass
 
-@export var animable:Animable
-@export var numero_entradas:int
+@onready var animable = $Animable
+@export var entrances_number:int
 
-signal girando(it_is:bool)
-var casillas: Array[Casilla] = []
+signal spining(it_is:bool)
+var tiles_on: Array[TileClass] = []
 
-var tablero_conectado:Tablero
+var conected_board:BoardClass
 
-# Primero: Casilla núcleo -> índice del tablero
-# Después de conectar: Casilla núcleo -> Casilla tablero
-var entrada_salida: Dictionary = {}
+# Primero: TileClass núcleo -> índice del tablero
+# Después de conectar: TileClass núcleo -> TileClass tablero
+var board_conexions: Dictionary = {}
 	
 func _ready() -> void:
-	_reconstruir_casillas()
+	_reasign_tiles()
 
-func _reconstruir_casillas():
+func _reasign_tiles():
 	
-	casillas.clear()
+	tiles_on.clear()
 	
-	var nodes := get_tree().get_nodes_in_group("Casilla Nucleus")
-	
-	nodes.sort_custom(func(a, b): return a.index_casilla < b.index_casilla)
+	var nodes := get_tree().get_nodes_in_group("Nucleus Tile")
 	
 	var i = 0
 	for node in nodes:
-		if node is Casilla:
-			casillas.append(node)
-			girando.connect(node._on_nucleo_girando)
+		if node is TileClass:
+			tiles_on.append(node)
+			spining.connect(node._on_nucleo_girando)
+			node.tile_index = i
 			
-			if node.is_in_group("Nucleus Vertice"):
-				var entrada_idx := int(round(i * (36.0 / numero_entradas))) % 36
-				entrada_salida[node] = entrada_idx		
+			if node.is_in_group("Nucleus Vertex"):
+				var entrance_idx := int(round(i * (36.0 / entrances_number))) % 36
+				board_conexions[node] = entrance_idx		
 		
 		i += 1
 # -------------------------------------------------
 # CONEXIÓN CON TABLERO
 # -------------------------------------------------
-func conectar_con_tablero(tablero_global: Tablero) -> void:
+func board_conect(current_board: BoardClass) -> void:
 	
-	tablero_conectado = tablero_global
-	var nuevas_conexiones := {}
+	conected_board = current_board
+	var new_conexions := {}
 
-	for casilla_nucleo in entrada_salida.keys():
-		var entrada_idx: int = entrada_salida[casilla_nucleo]
+	for nucleus_tile in board_conexions.keys():
+		var entrance_idx: int = board_conexions[nucleus_tile]
 
-		if entrada_idx >= 0 and entrada_idx < tablero_global.casillas_internas.size():
-			nuevas_conexiones[casilla_nucleo] = tablero_global.casillas_internas[entrada_idx]
+		if entrance_idx >= 0 and entrance_idx < current_board.int_tiles.size():
+			new_conexions[nucleus_tile] = current_board.int_tiles[entrance_idx]
 		else:
-			print("⚠️ Índice inválido:", entrada_idx)
-			nuevas_conexiones[casilla_nucleo] = null
+			print("⚠️ Índice inválido:", entrance_idx)
+			new_conexions[nucleus_tile] = null
 
-	entrada_salida = nuevas_conexiones
+	board_conexions = new_conexions
 	
-	girar(GameResources.azar.randi_range(5, 15))
+	spin(GameResources.luck.randi_range(5, 15))
 
 # -------------------------------------------------
 # ROTACIÓN DEL NÚCLEO
 # -------------------------------------------------
-func girar(numero_casillas_giro:int = 1) -> void:
+func spin(spin_tiles_number:int = 1) -> void:
 	
-	if tablero_conectado == null:
+	if !is_inside_tree():
+		return
+	if conected_board == null:
 		return
 	
-	girando.emit(true)
-	#resaltar_vertices(false)
-	#resaltar_conexiones_tablero(false)
+	if is_queued_for_deletion():
+		return
+	spining.emit(true)
 
-	var angulo_giro := deg_to_rad(10 * numero_casillas_giro)
+	var spin_angle := deg_to_rad(10 * spin_tiles_number)
 	
 	animable.play(func(tween):
 		tween.tween_property(
 		self,
 		"rotation",
-		rotation - angulo_giro,
-		numero_casillas_giro*.4 #0.4
+		rotation - spin_angle,
+		spin_tiles_number*.4 #0.4
 		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	)
 	
-	animable.animacion_terminada.connect(
-			_on_giro_terminado.bind(numero_casillas_giro),
+	animable.finished_animation.connect(
+			_on_finished_spin.bind(spin_tiles_number),
 		CONNECT_ONE_SHOT
 	)
 
-func _on_giro_terminado(numero_casillas_giro:int) -> void:
+func _on_finished_spin(spin_tiles_number:int) -> void:
 	
+	if !is_instance_valid(self):
+		return
+	if conected_board == null:
+		return
+		
 	# Ajustas conexiones lógicas aquí
-	for casilla_nucleo in entrada_salida.keys():
-		var casilla_tablero: Casilla = entrada_salida[casilla_nucleo]
-		if casilla_tablero == null:
+	for nucleus_tile in board_conexions.keys():
+		var board_tile: TileClass = board_conexions[nucleus_tile]
+		if board_tile == null:
 			continue
 
-		var idx := tablero_conectado.casillas_internas.find(casilla_tablero)
-		var nuevo_idx := (idx + numero_casillas_giro) % tablero_conectado.casillas_internas.size()
-		entrada_salida[casilla_nucleo] = tablero_conectado.casillas_internas[nuevo_idx]
+		var idx := conected_board.int_tiles.find(board_tile)
+		var new_idx := (idx + spin_tiles_number) % conected_board.int_tiles.size()
+		board_conexions[nucleus_tile] = conected_board.int_tiles[new_idx]
 
-	girando.emit(false)
+	spining.emit(false)

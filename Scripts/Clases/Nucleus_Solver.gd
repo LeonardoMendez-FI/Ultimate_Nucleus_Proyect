@@ -1,28 +1,47 @@
 extends Node2D
 class_name Nucleus_Solver
 
-var figura_nucleo:GameConstants.FIGURAS
-var rute_escene:String
-var escene_nucleus:PackedScene
-var nucleus_actual:Nucleus
+@export var button:bool = false:
+	set(value):
+		button = value
+		if value:
+			_on_figura_changed()
+		
+@export var nucleus_shape:= GameConfiguration.nucleus_shape
+
+var nucleus_dict:Dictionary = {} # shape -> Nucleus
+var current_nucleus:Nucleus
 
 func _ready() -> void:
-	GameConfiguration.figura_nucleo_changed.connect(_on_figura_changed)
+	
+	for shape in GameConstants.DIC_FIGURAS.keys():
+		var rute := GameScenes.nucleus_scene % [
+			GameConstants.DIC_FIGURAS[shape].Name
+		]
+
+		var scene:PackedScene = load(rute)
+		if not scene:
+			push_error("No se pudo cargar: " + rute)
+			continue
+
+		var nucleus:Nucleus = scene.instantiate()
+		nucleus.visible = false
+		nucleus.process_mode = Node.PROCESS_MODE_DISABLED
+
+		add_child(nucleus)
+		nucleus_dict[shape] = nucleus
+		
+	GameConfiguration.nucleus_shape_changed.connect(_on_figura_changed)
 	_on_figura_changed()
 
-func _on_figura_changed() -> void:
-	
-	if nucleus_actual and is_instance_valid(nucleus_actual):
-		nucleus_actual.queue_free()
-	
-	figura_nucleo = GameConfiguration.figura_nucleo
-	rute_escene = GameScenes.scene_nucleus%[GameConstants.DIC_FIGURAS[figura_nucleo].Nombre]
-	escene_nucleus = load(rute_escene)
-	
-	if not escene_nucleus:
-		push_error("No se pudo cargar la escena: " + rute_escene)
+func _on_figura_changed(shape:=nucleus_shape):
+	if current_nucleus:
+		current_nucleus.visible = false
+		current_nucleus.process_mode = Node.PROCESS_MODE_DISABLED
+
+	current_nucleus = nucleus_dict.get(shape)
+	if not current_nucleus:
 		return
-		
-	nucleus_actual = escene_nucleus.instantiate()
-	
-	add_child(nucleus_actual)
+
+	current_nucleus.visible = true
+	current_nucleus.process_mode = Node.PROCESS_MODE_INHERIT

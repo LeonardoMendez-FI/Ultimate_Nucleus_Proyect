@@ -1,0 +1,204 @@
+[gd_scene load_steps=4 format=3 uid="uid://3x8mnnuvlq2"]
+
+[ext_resource type="Script" uid="uid://m7y7ljqs1yr6" path="res://Scripts/nucleus.gd" id="1_wyamh"]
+[ext_resource type="PackedScene" uid="uid://45l0eq727s56" path="res://Scenes/TheGame/Components/Tile.tscn" id="2_o4vcy"]
+[ext_resource type="Script" uid="uid://dd3fm2fckrvy" path="res://Scripts/Clases/Animable.gd" id="3_wyamh"]
+
+[node name="_Sprite2D_12" type="Sprite2D"]
+script = ExtResource("1_wyamh")
+numero_entradas = 12
+
+[node name="Casilla_Nucleus_00" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(219.16283, 19.174263)
+rotation = 0.08726646
+input_pickable = false
+habilidad = 2
+color_habilidad = 1
+tipo_casilla = 2
+
+[node name="Casilla_Nucleus_01" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(192.00003, -37)
+rotation = -0.17453289
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 1
+
+[node name="Casilla_Nucleus_02" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(199.38771, -92.97602)
+rotation = -0.43633235
+input_pickable = false
+habilidad = 2
+color_habilidad = 3
+tipo_casilla = 2
+index_casilla = 2
+
+[node name="Casilla_Nucleus_03" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(145.99998, -125)
+rotation = -0.6981317
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 3
+
+[node name="Casilla_Nucleus_04" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(126.18681, -180.21346)
+rotation = -0.95993114
+input_pickable = false
+habilidad = 2
+color_habilidad = 2
+tipo_casilla = 2
+index_casilla = 4
+
+[node name="Casilla_Nucleus_05" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(68.99999, -192)
+rotation = -1.2217306
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 5
+
+[node name="Casilla_Nucleus_06" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(19.174263, -219.16283)
+rotation = -1.4835298
+input_pickable = false
+habilidad = 2
+color_habilidad = 0
+tipo_casilla = 2
+index_casilla = 6
+
+[node name="Casilla_Nucleus_07" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-34, -200)
+rotation = -1.7453293
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 7
+
+[node name="Casilla_Nucleus_08" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-92.97602, -199.38771)
+rotation = -2.0071287
+input_pickable = false
+habilidad = 2
+color_habilidad = 1
+tipo_casilla = 2
+index_casilla = 8
+
+[node name="Casilla_Nucleus_09" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-135, -153.00002)
+rotation = -2.268928
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 9
+
+[node name="Casilla_Nucleus_10" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-180.21346, -126.18681)
+rotation = -2.5307274
+input_pickable = false
+habilidad = 2
+color_habilidad = 3
+tipo_casilla = 2
+index_casilla = 10
+
+[node name="Casilla_Nucleus_11" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-191, -67)
+rotation = -2.792527
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 11
+
+[node name="Casilla_Nucleus_12" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-219.16283, -19.174263)
+rotation = -3.0543263
+input_pickable = false
+habilidad = 2
+color_habilidad = 2
+tipo_casilla = 2
+index_casilla = 12
+
+[node name="Casilla_Nucleus_13" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-198.00002, 38.000004)
+rotation = 2.9670599
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 13
+
+[node name="Casilla_Nucleus_14" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-199.38771, 92.97602)
+rotation = 2.7052603
+input_pickable = false
+habilidad = 2
+color_habilidad = 0
+tipo_casilla = 2
+index_casilla = 14
+
+[node name="Casilla_Nucleus_15" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-156, 128)
+rotation = 2.443461
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 15
+
+[node name="Casilla_Nucleus_16" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-126.18681, 180.21346)
+rotation = 2.1816616
+input_pickable = false
+habilidad = 2
+color_habilidad = 1
+tipo_casilla = 2
+index_casilla = 16
+
+[node name="Casilla_Nucleus_17" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-70, 187)
+rotation = 1.919862
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 17
+
+[node name="Casilla_Nucleus_18" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(-19.174263, 219.16283)
+rotation = 1.6580628
+input_pickable = false
+habilidad = 2
+color_habilidad = 3
+tipo_casilla = 2
+index_casilla = 18
+
+[node name="Casilla_Nucleus_19" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(33.000004, 194.00002)
+rotation = 1.3962635
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 19
+
+[node name="Casilla_Nucleus_20" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(92.97602, 199.38771)
+rotation = 1.134464
+input_pickable = false
+habilidad = 2
+color_habilidad = 2
+tipo_casilla = 2
+index_casilla = 20
+
+[node name="Casilla_Nucleus_21" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(130, 155.00002)
+rotation = 0.87266463
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 21
+
+[node name="Casilla_Nucleus_22" parent="." groups=["Casilla Nucleus", "Nucleus Vertice"] instance=ExtResource("2_o4vcy")]
+position = Vector2(180.21346, 126.18681)
+rotation = 0.61086524
+input_pickable = false
+habilidad = 2
+color_habilidad = 0
+tipo_casilla = 2
+index_casilla = 22
+
+[node name="Casilla_Nucleus_23" parent="." groups=["Casilla Nucleus"] instance=ExtResource("2_o4vcy")]
+position = Vector2(189, 69)
+rotation = 0.34906575
+input_pickable = false
+tipo_casilla = 2
+index_casilla = 23
+
+[node name="Animable" type="Node" parent="."]
+script = ExtResource("3_wyamh")
+metadata/_custom_type_script = "uid://dd3fm2fckrvy"
